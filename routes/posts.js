@@ -1,15 +1,15 @@
-const express = require("express");
-const router = express.Router();
-const Post = require("../models/Post");
+const express = require("express")
+const router  = express.Router()
+const Post    = require("../models/Post")
 
-//GET METHODs
+//GET METHODS
 router.get("/", async (req, res) => {
-  console.log(" GET : IN POSTS NOW - - - ");
+  console.log(" GET : IN POSTS NOW - - - ")
   try {
-    const post = await Post.find();
-    res.json(post);
+    const post = await Post.find()
+    res.json(post)
   } catch (err) {
-    res.json({ message: error });
+    res.json({ message: error })
   }
 });
 
@@ -34,9 +34,9 @@ router.post("/", async (req, res) => {
 
   try {
     const savedPost = await post.save();
-    res.json(data);
+    res.json(data)
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: err })
   }
 });
 
@@ -45,9 +45,9 @@ router.delete("/:postId", async (req, res) => {
   console.log(`DELETE : IN POSTS id ${req.params.postId} NOW - - - `);
   try {
     const removedPost = await Post.deleteOne({ _id: req.params.postId });
-    res.json(removedPost);
+    res.json(removedPost)
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: err })
   }
 });
 
