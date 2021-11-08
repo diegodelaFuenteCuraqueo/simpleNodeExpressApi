@@ -1,8 +1,8 @@
 const express = require("express")
-const router = express.Router()
-const Post = require("../models/Post")
+const router  = express.Router()
+const Post    = require("../models/Post")
 
-//GET METHODs
+//GET METHODS
 router.get("/", async (req, res) => {
   console.log(" GET : IN POSTS NOW - - - ")
   try {
